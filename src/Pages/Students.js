@@ -3,6 +3,7 @@ import '../App.css';
 import { useState } from "react";
 import { StudentCard } from "../component/StudentCard";
 import { useStudentConsumer } from "../StudentContext";
+
 export function Students(){
     let [StudentList ,addStudent] = useStudentConsumer();
     let [SPage, setPage] =useState(true);
@@ -33,27 +34,26 @@ export function Students(){
             setScourse('');
             setPage(true);
         }else{
-           //Updation happens here....
+            
+                StudentList.map ( (st) => {
+// eslint-disable-next-line
+                if(st.name === Student.name){
+                    st.name=Sname;
+                    st.age=Sage;
+                    st.course =Scourse;
+                    st.batch =Sbatch;
+                    }
+                } );
+                setPage(true);
+                setEdit(false);
+                setSage('');
+                setSname('');
+                setSbatch('');
+                setScourse('');
 
-            StudentList.map( (st) => {
-
-            if(st.name === Student.name){
-                st.name=Sname;
-                st.age=Sage;
-                st.course =Scourse;
-                st.batch =Sbatch;
-                }
-            } );
-            setPage(true);
-            setEdit(false);
-            setSage('');
-            setSname('');
-            setSbatch('');
-            setScourse('');
-            console.log(edit);
-            setBtn("ADD");
-
-        }
+                console.log(edit);
+                setBtn("ADD");
+            }
 };
 
     function FormCancel(){
@@ -84,7 +84,7 @@ export function Students(){
             <div className="student-details-btn">
                 <h2>Students Details</h2>
                 <button onClick={() => setPage(false) } >Add Student</button>
-            </div>
+        </div>
             <div>
             {
             SPage? <section className="details-section">  
