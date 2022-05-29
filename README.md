@@ -1,3 +1,14 @@
+# No Issue: https://github.com/Sajal4/React6/blob/master/src/Issue/no_issues.jpg
+# Issue: https://github.com/Sajal4/React6/blob/master/src/Issue/issues_in%20netlify.jpg
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
